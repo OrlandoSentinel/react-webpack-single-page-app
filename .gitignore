@@ -1,0 +1,6 @@
+.*
+!.gitignore
+!.eslintrc
+!.babelrc
+
+/node_modules/
