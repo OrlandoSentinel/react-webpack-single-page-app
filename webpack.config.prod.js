@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index',
   
   output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'build'),
         filename: 'bundle.min.js',
         publicPath: './'
   },
@@ -47,7 +47,7 @@ module.exports = {
         
         {
             test: /\.(png|jpg|gif)$/, 
-            loader: 'url-loader?limit=8192'
+            loader: 'file-loader?name=images/[name].[ext]?[hash]'
         }
     ]
   }
