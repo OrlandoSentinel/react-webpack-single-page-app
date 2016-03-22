@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-single-page-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A combination of a few existing React/Webpack boilerplates to make cooking up single page apps easy.",
   "scripts": {
     "start": "node server.js",
