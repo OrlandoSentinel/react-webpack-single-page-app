@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/AndrewGibson27/react-webpack-single-page-app"
   },
   "author": "Andrew Gibson <atgibson27@gmail.com>",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/AndrewGibson27/react-webpack-single-page-app/issues"
   },
   "devDependencies": {
     "babel-core": "^6.3.15",
