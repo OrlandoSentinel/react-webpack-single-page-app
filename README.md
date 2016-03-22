@@ -25,9 +25,7 @@ I still need to do an extensive test, but I'm running this with Node 4.2.1 and N
 
 ## A few explainers
 
-Images go in **/public/images/**.
-
-If you've built once for production and want to go back to developing, you should remove all contents from the **/public/** directory **besides** the **/images/** subdirectory.
+Images go in **/assets/images/**.
 
 The **index.html** file in the root directory is what is served when the development server is running. It is intentionally quite bare. This is where you would place all relevant app markup but **not** any code for stuff only necessary in production. Instead, these things, along with the app markup, go in **/templates/prod.tpl.html**. The thought process here is that, during development, you don't want anything slowing down your page.
 
