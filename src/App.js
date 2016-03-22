@@ -34,7 +34,7 @@ export default class App extends Component {
     return (
       <div>
         <p className={class_name}>Hello, world</p>
-        <img src={require('../public/images/placeholder.png')} />
+        <img src={require("../assets/images/placeholder.png")} />
       </div>
     );
   }
