@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss');
 
 gulp.task('autoprefixer', function(){
-	gulp.src('./public/app.min.css')
+	gulp.src('./build/app.min.css')
 	    .pipe(postcss([ 
 	        autoprefixer({ 
 	            browsers: [
@@ -19,5 +19,5 @@ gulp.task('autoprefixer', function(){
 			    ]
 	        }) 
 	    ]))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./build'));
 });
