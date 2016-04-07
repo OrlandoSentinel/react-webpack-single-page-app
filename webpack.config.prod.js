@@ -42,7 +42,7 @@ module.exports = {
         
         {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?&modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader')
         },
         
         {
