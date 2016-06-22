@@ -25,11 +25,7 @@ I still need to do an extensive test, but I'm running this with Node 4.2.1 and N
 
 ## A few explainers
 
-Images go in **/assets/images/**.
-
-The **index.html** file in the root directory is what is served when the development server is running. It is intentionally quite bare. This is where you would place all relevant app markup but **not** any code for stuff only necessary in production. Instead, these things, along with the app markup, go in **/templates/prod.tpl.html**. The thought process here is that, during development, you don't want anything slowing down your page.
-
-The production template doesn't contain a script tag for the bundle because Webpack will automatically inject it during the production build.
+Images that you will `require` in your React app go in **/assets/images/**. Otherwise, you can place them in **/public/images/**.
 
 After hours of frustration, I gave up on trying to make Autoprefixer work with the webpack-extract-text-plugin. That's why I'm letting Gulp handle it. There is no Autoprefixer in the development Webpack build because I assume you're using a modern browser during development.
 
