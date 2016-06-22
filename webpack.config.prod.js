@@ -1,24 +1,18 @@
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: './src/index',
   
   output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'bundle.min.js?[hash]',
+        path: path.join(__dirname, 'public'),
+        filename: 'js/build/bundle.js?[hash]',
         publicPath: './'
   },
   
   plugins: [
-        new HtmlWebpackPlugin({
-            template: 'templates/prod.tpl.html',
-            inject: 'body',
-            filename: 'index.html'
-        }),
-        new ExtractTextPlugin('app.min.css?[hash]'),
+        new ExtractTextPlugin('css/build/app.css?[hash]'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
@@ -50,7 +44,7 @@ module.exports = {
         
         {
             test: /\.(png|jpg|gif)$/, 
-            loader: 'file-loader?name=images/[name].[ext]?[hash]'
+            loader: 'file-loader?name=images/build/[name].[ext]?[hash]'
         }
     ]
   }

@@ -6,7 +6,7 @@
     "start": "node server.js",
     "dev": "NODE_ENV=development npm run start",
     "prod": "npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js && gulp autoprefixer",
-    "clean": "rimraf -f build",
+    "clean": "rimraf -f public/**/build/*",
     "lint": "eslint src"
   },
   "repository": {
@@ -33,7 +33,6 @@
     "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-postcss": "^6.0.1",
-    "html-webpack-plugin": "^1.7.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
     "react-transform-catch-errors": "^1.0.0",
