@@ -1,0 +1,18 @@
+@import '../mixins';
+
+.paragraph {
+    font-size: 28px;
+    font-family: Georgia, serif;
+    box-sizing: border-box; /* demonstrates Autoprefixer at work */
+    @include calc(width, "100% - 100px"); /* demonstrates Sass at work */
+}
+
+.unmounted {
+    composes: paragraph;
+    background: yellow;
+}
+
+.mounted {
+    composes: paragraph;
+    background: pink;
+}
