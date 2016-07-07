@@ -33,8 +33,10 @@ export default class App extends Component {
   
     return (
       <div>
-        <p className={class_name}>Hello, world</p>
+        <p className={class_name}>Hello world. My color change is controlled by CSS modules.</p>
         <img src={require('../../../assets/images/placeholder.png')} />
+        <p>I am an image that is required in a React component.</p>
+        <p className={styles.font_example}>My font is loaded by webfontloader.</p>
       </div>
     );
   }
