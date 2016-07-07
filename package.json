@@ -4,7 +4,7 @@
   "description": "A combination of a few existing React/Webpack boilerplates to make cooking up single page apps easy.",
   "scripts": {
     "start": "node server.js",
-    "dev": "NODE_ENV=development npm run start",
+    "dev": "npm run clean && NODE_ENV=development npm run start",
     "prod": "npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js && gulp autoprefixer",
     "clean": "rimraf -f public/**/build/*",
     "lint": "eslint src"
