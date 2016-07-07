@@ -43,6 +43,16 @@ module.exports = {
         },
         
         {
+            test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
+            loader: "url-loader?mimetype=application/font-woff&name=fonts/build/[name].[ext]?[hash]"
+        },
+        
+        {
+            test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
+            loader: "file-loader?name=fonts/build/[name].[ext]?[hash]"
+        },
+        
+        {
             test: /\.(png|jpg|gif)$/, 
             loader: 'file-loader?name=images/build/[name].[ext]?[hash]'
         }
