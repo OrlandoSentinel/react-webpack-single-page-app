@@ -23,7 +23,7 @@
 
 .font_example {
     font-family: $serif;
-    margin-top: 30px;
+    margin-top: 50px;
     
     :global(.wf-active) & {
         font-family: $droid;
@@ -33,5 +33,5 @@
 .clearfix {
     @include clearfix;
     float: left;
-    margin-top: 30px;
+    margin-top: 50px;
 }
