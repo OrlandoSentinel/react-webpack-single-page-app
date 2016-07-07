@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: './src/index',
@@ -39,7 +40,7 @@ module.exports = {
         
         {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?&modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader!sass-loader')
         },
         
         {
@@ -57,5 +58,9 @@ module.exports = {
             loader: 'file-loader?name=images/build/[name].[ext]?[hash]'
         }
     ]
+  },
+  
+  postcss: function(){
+    return [autoprefixer];
   }
 };

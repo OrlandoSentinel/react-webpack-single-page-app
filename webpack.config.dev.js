@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -21,14 +22,6 @@ module.exports = {
         })
   ],
   
-  loaders: [
-  { test: /\.css$/,  loader: "style-loader!css-loader" },
-  { test: /\.less$/, loader: "style-loader!css-loader!less-loader" },
-  { test: /\.gif$/, loader: "url-loader?mimetype=image/png" },
-  
-  
-]
-  
   module: {
     loaders: [
         {
@@ -44,7 +37,7 @@ module.exports = {
         
         {
             test: /\.scss$/,
-            loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader'
+            loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader!sass-loader'
         },
         
         {
@@ -62,5 +55,23 @@ module.exports = {
             loader: 'file-loader'
         }
     ]
+  },
+  
+  postcss: function(){
+    return [
+        autoprefixer({ 
+            browsers: [
+                'Firefox >= 1',
+                'Chrome >= 1',
+                'Safari >= 5',
+                'Edge >= 1',
+                'IE >= 9',
+                'iOS >= 6',
+                'ChromeAndroid >= 1',
+                'FirefoxAndroid >= 1',
+                'Android >= 4'
+            ]
+        })
+    ];
   }
 };
