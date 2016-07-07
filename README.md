@@ -23,8 +23,5 @@ Node.js 4.2.0 or higher.
 ## Explainers
 Images that you will `require` in your React app go in **/assets/images/**. Otherwise, you can place them in **/public/images/**.
 
-## Want to contribute?
-Consult TODO.md!
-
 ## License
 MIT
