@@ -5,7 +5,10 @@
     font-size: 28px;
     font-family: Georgia, serif;
     box-sizing: border-box; /* demonstrates Autoprefixer at work */
-    @include calc(width, "100% - 100px"); /* demonstrates Sass at work */
+    
+    @include breakpoint(desktop) {
+        font-size: 36px; /* demonstrates Sass at work */
+    }
 }
 
 .unmounted {
@@ -25,4 +28,10 @@
     :global(.wf-active) & {
         font-family: $droid;
     }
+}
+
+.clearfix {
+    @include clearfix;
+    float: left;
+    margin-top: 30px;
 }

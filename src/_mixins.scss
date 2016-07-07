@@ -1,5 +1,15 @@
-@mixin calc($property, $expression) { 
-    #{$property}: -webkit-calc(#{$expression});
-    #{$property}: -moz-calc(#{$expression}); 
-    #{$property}: calc(#{$expression});
-} 
+/* https://responsivedesign.is/develop/getting-started-with-sass */
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 1280px) { @content; }
+    }
+}
+
+/* http://blog.teamtreehouse.com/a-better-clearfix-with-sass */
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
