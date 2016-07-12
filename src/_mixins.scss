@@ -1,6 +1,9 @@
 /* https://responsivedesign.is/develop/getting-started-with-sass */
 @mixin breakpoint($point) {
-    @if $point == desktop {
+    @if $point == tablet {
+        @media (min-width: 767px) { @content; }
+    }
+    @else if $point == desktop {
         @media (min-width: 1280px) { @content; }
     }
 }
