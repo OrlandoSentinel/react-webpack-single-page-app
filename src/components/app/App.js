@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+require('jquery');
+
 import styles from './app.scss';
 
 export default class App extends Component {
