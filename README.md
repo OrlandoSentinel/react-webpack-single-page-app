@@ -1,24 +1,29 @@
-# React/Webpack Single Page App
-This package combines some elements of these two boilerplates ([react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate) and [webpack-express-boilerplate](https://github.com/christianalfoni/webpack-express-boilerplate)) and offers additional features to streamline development.
+# React single-page app, Sentinel style
+A fork of Andrew Gibson's [project](https://github.com/AndrewGibson27/react-webpack-single-page-app) that adds OS-specific stuff for React development
 
-## Requirements
-Node.js 4.2.0 or higher.
+## Base technology
++ Node.js >= 4.2.0
++ [Webpack](https://webpack.github.io/)
++ [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)
++ [Babel](https://babeljs.io/)
 
-## Features
-+ Hot reloading React components
-+ Hot reloading CSS
-+ [CSS modules](http://glenmaddern.com/articles/css-modules)
-+ [Sass](http://sass-lang.com/)
-+ [Autoprefixer](https://github.com/postcss/autoprefixer)
-+ Images, JSON and fonts can be `require`d inside React components
-+ [webfontloader](https://github.com/typekit/webfontloader) improves page performance
-+ Linting
-+ Includes a few utility functions, including debounce
-+ Includes a few utility Sass mixins, including one for media queries
+## Stuff added for Orlando Sentinel
++ SVG sprites
++ Standard OS header
++ [Modernizr](https://modernizr.com/)
+
+### How to use Modernizr
+1. Navigate to **/node_modules/modernizr** on the command line
+2. Execute `npm install`
+3. Open **/node_modules/modernizr/config-all.json** in a text editor
+4. Edit the file to include only the tests you want
+5. Execute `./bin/modernizr -c lib/config-all.json`
+6. Navigate back to this project's root on the command line
+7. Execute `npm run modernizr`
 
 ## Workflow
-+ To start developing, execute `npm start`. This will start the Node server and enable hot reloading of React components and CSS. Webpack inserts the JavaScript bundle and the CSS into **public/index.html**.
-+ To build for production, execute `npm run prod`. This will dump all files necessary for production in that same directory. The production JavaScript bundle is minified, and your CSS modules are all combined into a single stylesheet inserted in the page head.
++ Development: `npm run dev`
++ Production: `npm run prod`
 
 ## Explainers
 Images that you will `require` in your React app go in **/assets/images/**. Otherwise, you can place them in **/public/images/**.
