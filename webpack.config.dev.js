@@ -42,7 +42,7 @@ module.exports = {
         
         {
             test: /\.scss$/,
-            loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader!sass-loader'
+            loader: 'style-loader!css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader!sass-loader'
         },
         
         {
@@ -63,20 +63,6 @@ module.exports = {
   },
   
   postcss: function(){
-    return [
-        autoprefixer({ 
-            browsers: [
-                'Firefox >= 1',
-                'Chrome >= 1',
-                'Safari >= 5',
-                'Edge >= 1',
-                'IE >= 9',
-                'iOS >= 6',
-                'ChromeAndroid >= 1',
-                'FirefoxAndroid >= 1',
-                'Android >= 4'
-            ]
-        })
-    ];
+    return [autoprefixer];
   }
 };
