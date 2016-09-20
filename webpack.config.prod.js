@@ -8,12 +8,22 @@ module.exports = {
   
   output: {
         path: path.join(__dirname, 'public'),
-        filename: 'js/build/bundle.js?[hash]',
+        filename: 'bundle-build.js?[hash]',
         publicPath: './'
   },
   
   plugins: [
-        new ExtractTextPlugin('css/build/app.css?[hash]'),
+        new ExtractTextPlugin('app-build.css?[hash]'),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: {
+                discardComments: {
+                    removeAll: true
+                }
+            },
+            canPrint: true
+        }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
@@ -50,17 +60,17 @@ module.exports = {
         
         {
             test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
-            loader: "url-loader?mimetype=application/font-woff&name=fonts/build/[name].[ext]?[hash]"
+            loader: "url-loader?mimetype=application/font-woff&name=[name]-build.[ext]?[hash]"
         },
         
         {
             test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
-            loader: "file-loader?name=fonts/build/[name].[ext]?[hash]"
+            loader: "file-loader?name=[name]-build.[ext]?[hash]"
         },
         
         {
             test: /\.(png|jpg|gif)$/, 
-            loader: 'file-loader?name=images/build/[name].[ext]?[hash]'
+            loader: 'file-loader?name=[name]-build.[ext]?[hash]'
         }
     ]
   },

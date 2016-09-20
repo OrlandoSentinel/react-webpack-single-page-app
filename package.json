@@ -6,8 +6,8 @@
     "start": "node server.js",
     "dev": "npm run clean && NODE_ENV=development npm run start",
     "prod": "BROWSERSLIST_CONFIG=./browserslist npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js",
-    "clean": "rimraf -f public/**/build/*",
-    "lint": "eslint src",
+    "clean": "trash ./public/**/*build*",
+    "lint": "eslint src"
     "modernizr": "gulp modernizr"
   },
   "repository": {
@@ -43,9 +43,9 @@
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.0.1",
-    "rimraf": "^2.5.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "trash-cli": "^1.3.0",
     "uglify-save-license": "^0.4.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
